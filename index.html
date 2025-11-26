@@ -1,0 +1,138 @@
+<! DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantacalcio Bustine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="auth-screen" class="auth-container">
+        <div class="auth-box">
+            <h1>⚽ Fantacalcio Bustine</h1>
+            <div id="auth-content">
+                <button id="google-login" class="auth-btn google">
+                    <span>🔵</span> Accedi con Google
+                </button>
+                <div class="divider">oppure</div>
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <button id="email-login" class="auth-btn">Accedi</button>
+                <button id="email-register" class="auth-btn secondary">Registrati</button>
+            </div>
+            <div id="auth-loading" class="hidden">
+                <p>Caricamento...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="container hidden">
+        <header>
+            <h1>⚽ Fantacalcio Bustine</h1>
+            <div class="user-info">
+                <span id="user-name">Giocatore</span>
+                <span id="credits">Crediti: 1000</span>
+                <span id="team-count">Giocatori in rosa: 0/25</span>
+                <button id="logout-btn" class="logout-btn">🚪 Esci</button>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="shop">🎁 Negozio</button>
+            <button class="tab-btn" data-tab="team">👥 La Mia Rosa</button>
+            <button class="tab-btn" data-tab="lineup">📋 Formazione</button>
+            <button class="tab-btn" data-tab="match">⚔️ Partita</button>
+        </nav>
+
+        <main>
+            <section id="shop" class="tab-content active">
+                <h2>Acquista Bustine</h2>
+                <div class="packs-container">
+                    <div class="pack bronze" data-type="bronze">
+                        <div class="pack-icon">🥉</div>
+                        <h3>Bustina Bronze</h3>
+                        <p>5 giocatori comuni</p>
+                        <p class="price">100 crediti</p>
+                        <button class="buy-btn">Acquista</button>
+                    </div>
+                    <div class="pack silver" data-type="silver">
+                        <div class="pack-icon">🥈</div>
+                        <h3>Bustina Silver</h3>
+                        <p>5 giocatori (1 raro garantito)</p>
+                        <p class="price">250 crediti</p>
+                        <button class="buy-btn">Acquista</button>
+                    </div>
+                    <div class="pack gold" data-type="gold">
+                        <div class="pack-icon">🥇</div>
+                        <h3>Bustina Gold</h3>
+                        <p>5 giocatori (1 top garantito)</p>
+                        <p class="price">500 crediti</p>
+                        <button class="buy-btn">Acquista</button>
+                    </div>
+                </div>
+
+                <div id="pack-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <h2>🎉 Hai trovato! </h2>
+                        <div id="pack-results"></div>
+                        <button id="close-modal">Chiudi</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="team" class="tab-content">
+                <h2>La Mia Rosa</h2>
+                <div class="filters">
+                    <button class="filter-btn active" data-role="all">Tutti</button>
+                    <button class="filter-btn" data-role="P">Portieri</button>
+                    <button class="filter-btn" data-role="D">Difensori</button>
+                    <button class="filter-btn" data-role="C">Centrocampisti</button>
+                    <button class="filter-btn" data-role="A">Attaccanti</button>
+                </div>
+                <div id="team-list" class="players-grid"></div>
+            </section>
+
+            <section id="lineup" class="tab-content">
+                <h2>Schiera la Formazione</h2>
+                <div class="formation-selector">
+                    <label>Modulo:</label>
+                    <select id="formation-select">
+                        <option value="4-4-2">4-4-2</option>
+                        <option value="4-3-3">4-3-3</option>
+                        <option value="3-5-2">3-5-2</option>
+                        <option value="3-4-3">3-4-3</option>
+                    </select>
+                </div>
+                <div id="formation-field" class="football-field"></div>
+                <div id="bench-players" class="bench"></div>
+            </section>
+
+            <section id="match" class="tab-content">
+                <h2>Gioca Partita</h2>
+                <div class="match-container">
+                    <button id="play-match" class="play-btn">⚽ Simula Partita</button>
+                    <div id="match-result" class="match-result hidden"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Game Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="data/players.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/packs.js"></script>
+    <script src="js/team.js"></script>
+    <script src="js/lineup.js"></script>
+    <script src="js/match.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

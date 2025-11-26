@@ -1,0 +1,106 @@
+/* Auth Styles */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-box {
+    background: linear-gradient(145deg, #1a1a2e, #0f3460);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+. auth-box h1 {
+    margin-bottom: 30px;
+    color: #e94560;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: #16213e;
+    color: #fff;
+    font-size: 1em;
+}
+
+. auth-box input::placeholder {
+    color: #888;
+}
+
+. auth-btn {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #e94560;
+    color: #fff;
+}
+
+.auth-btn:hover {
+    transform: scale(1.02);
+    background: #ff6b6b;
+}
+
+.auth-btn. secondary {
+    background: transparent;
+    border: 2px solid #e94560;
+}
+
+.auth-btn.google {
+    background: #4285f4;
+}
+
+.auth-btn.google:hover {
+    background: #5a95f5;
+}
+
+. divider {
+    margin: 20px 0;
+    color: #666;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #333;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.logout-btn {
+    padding: 8px 15px;
+    border: none;
+    background: rgba(231, 76, 60, 0.3);
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #e74c3c;
+}
+
+.hidden {
+    display: none ! important;
+}
