@@ -1,4 +1,4 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -7,35 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Login Screen -->
-    <div id="auth-screen" class="auth-container">
-        <div class="auth-box">
-            <h1>⚽ Fantacalcio Bustine</h1>
-            <div id="auth-content">
-                <button id="google-login" class="auth-btn google">
-                    <span>🔵</span> Accedi con Google
-                </button>
-                <div class="divider">oppure</div>
-                <input type="email" id="email" placeholder="Email">
-                <input type="password" id="password" placeholder="Password">
-                <button id="email-login" class="auth-btn">Accedi</button>
-                <button id="email-register" class="auth-btn secondary">Registrati</button>
-            </div>
-            <div id="auth-loading" class="hidden">
-                <p>Caricamento...</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Game Screen -->
-    <div id="game-screen" class="container hidden">
+    <div class="container">
         <header>
             <h1>⚽ Fantacalcio Bustine</h1>
             <div class="user-info">
-                <span id="user-name">Giocatore</span>
                 <span id="credits">Crediti: 1000</span>
                 <span id="team-count">Giocatori in rosa: 0/25</span>
-                <button id="logout-btn" class="logout-btn">🚪 Esci</button>
             </div>
         </header>
 
@@ -73,7 +50,8 @@
                     </div>
                 </div>
 
-                <div id="pack-modal" class="modal hidden">
+                <!-- Modal apertura bustina -->
+                <div id="pack-modal" class="modal" hidden>
                     <div class="modal-content">
                         <h2>🎉 Hai trovato! </h2>
                         <div id="pack-results"></div>
@@ -119,20 +97,12 @@
         </main>
     </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
-    
-    <!-- Game Scripts -->
-    <script src="js/firebase-config.js"></script>
     <script src="data/players.js"></script>
     <script src="js/game.js"></script>
     <script src="js/packs.js"></script>
     <script src="js/team.js"></script>
     <script src="js/lineup.js"></script>
     <script src="js/match.js"></script>
-    <script src="js/auth.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
